@@ -35,55 +35,75 @@ Type your code in New Editor:
 clear; 
 clc; 
 clear;
+
 function X=f(x)
-z=4*(1-x)^2,
+z=6*x*(1-x),
 X=x*z
 endfunction 
+
 a=0;
 b=1;
+
 EX=intg(a,b,f); 
+
 function y=c(y)
-z=4*(1-y)^2,
+z=6*y*(1-y),
 y=y*z
 endfunction 
+
 EY=intg(a,b,c);
+
 disp(EX,"i)Mean of X =")
 disp(EY," Mean of Y =")
+
 function X=g(x),
-z=3*(1-x)^2,
+z=6*x*(1-x),
 X=x^2*z
 endfunction 
+
 a=0;
 b=1;
+
 EX2=intg(a,b,g); 
+
 function Y=h(y)
-z=4*(1-y)^2,
+z=6*y*(1-y),
 Y=y^2*z
 endfunction 
+
 EY2=intg(a,b,h);
+
 vX2=EX2-(EX)^2;
 vY2=EY2-(EY)^2;
+
 disp(vX2,"ii)Variance of X"); 
 disp(vY2," Variance of Y");
+
 x= input("type in the reference sequence=");
 y= input("type in the second sequence="); 
+
 n1=max(size(y))-1;
 n2=max(size(x))-1;
+
 r=corr(x,y,n1);
+
 plot2d3('gnn',r);
+
+
 
 ```
 ## Output:
 
-<img width="760" height="691" alt="Screenshot 2026-05-21 135454" src="https://github.com/user-attachments/assets/0d308867-9120-4bfd-874d-0f35a4fd955b" />
+<img width="762" height="725" alt="image" src="https://github.com/user-attachments/assets/39f79db5-2596-47bf-bbe5-b87cd5000937" />
+
 
 
 ## Calculation:
 
 
-i) Mean of X = 0.25 ;Mean of Y = 0.25
+i) Mean of X = 0.5 ;Mean of Y = 0.5
 
-ii) Variance of X =0.0375; Variance of Y =0.0375
+ii) Variance of X =0.05; Variance of Y =0.05
 
 Type in the reference sequence = [1 2 3 4 5 6 7 8]
 
